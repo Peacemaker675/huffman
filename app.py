@@ -6,6 +6,11 @@ import glob
 app = Flask(__name__)
 
 UPLOAD_FOLDER = 'uploads'
+PROCESSED_FOLDER = 'processed'
+
+for folder in [UPLOAD_FOLDER, PROCESSED_FOLDER]:
+    if not os.path.exists(folder):
+        os.makedirs(folder)
 
 @app.route("/")
 def index():
