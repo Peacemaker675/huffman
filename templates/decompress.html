@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block title %} Decompression {% endblock %}
+{% block main %}
+{% if check == 1 %}
+    <p>File decompression succesful</p>
+{% else %}
+  <form action="/decompress" method="POST" enctype="multipart/form-data">
+    <label for="file-upload">Choose a file to decompress:</label>
+    <input type="file" id="file-decompress" name="file">
+    <button type="submit">Decompress</button>
+  </form>
+{% endif %}
+{% endblock %}

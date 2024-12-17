@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block title %} Compression {% endblock %}
+{% block main %}
+{% if check == 1 %}
+    <p>File compression succesful</p>
+{% else %}
+  <form action="/compress" method="POST" enctype="multipart/form-data">
+    <label for="file-upload">Choose a file to compress:</label>
+    <input type="file" id="file-compress" name="file">
+    <button type="submit">Compress</button>
+  </form>
+{% endif %}
+
+{% endblock %}
